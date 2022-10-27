@@ -1,6 +1,10 @@
 import React from "react";
 import CardVideo from "./Componentes/CardVideo";
 import "./styles.css";
+import { GlobalStayled } from "./GlobalStyle";
+import {EstilizarHeader} from "./Componentes/style"
+import {EstilizarMain} from "./Componentes/style"
+import {EstilizarNav} from "./Componentes/style"
 
 export default function App() {
   const card1 = {
@@ -11,14 +15,16 @@ export default function App() {
 
   return (
     <div>
+      <GlobalStayled/>
+    
       <div className="tela-inteira">
-        <header>
+        <EstilizarHeader>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </EstilizarHeader>
 
-        <main>
-          <nav className="menu-vertical">
+        <EstilizarMain>
+          <EstilizarNav className="menu-vertical">
             <ul>
               <li className="botoes-meunu-vertical">Início</li>
               <li className="botoes-meunu-vertical">Em alta</li>
@@ -27,7 +33,7 @@ export default function App() {
               <li className="botoes-meunu-vertical">Originais</li>
               <li className="botoes-meunu-vertical">Histórico</li>
             </ul>
-          </nav>
+          </EstilizarNav>
 
           <section className="painel-de-videos">
             <CardVideo
@@ -36,7 +42,7 @@ export default function App() {
               textoAlternativo={card1.textoAlternativo}
             />
           </section>
-        </main>
+        </EstilizarMain>
 
         <footer>
           <h4>Oi! Eu moro no footer!</h4>
